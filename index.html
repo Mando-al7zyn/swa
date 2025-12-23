@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" id="mainHtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arab BOT - Legal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* وضع ليلي دائم */
+            --bg: #2c2f33;
+            --card: #23272a;
+            --text: #dcddde;
+            --title: #7289da;
+            --sub: #99aab5;
+            --accent: #5865f2;
+            --success: #3ba55c;
+            --transition: all 0.3s ease;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: var(--card);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: var(--title);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* زر تغيير اللغة */
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--title);
+            color: var(--title);
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-btn:hover {
+            background: var(--title);
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .header-info { text-align: center; margin-bottom: 40px; }
+
+        .card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .card h2 {
+            color: var(--title);
+            margin-top: 0;
+            border-bottom: 1px solid rgba(153, 170, 181, 0.2);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card ul { padding: 0; list-style: none; }
+        .card li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .card li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--success);
+            margin-top: 5px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .btn-invite { background: var(--success); }
+        .btn-support { background: var(--accent); }
+        .btn:hover { filter: brightness(1.1); transform: scale(1.02); }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            color: var(--sub);
+            font-size: 0.9rem;
+        }
+
+        /* إخفاء المحتوى بناءً على اللغة */
+        [lang="ar"] .en-content, [lang="en"] .ar-content { display: none; }
+    </style>
+</head>
+
+<body class="dark-mode">
+
+<div class="navbar">
+    <h1><i class="fas fa-robot"></i> Arab BOT</h1>
+    <button class="lang-btn" onclick="toggleLanguage()">
+        <i class="fas fa-globe"></i>
+        <span id="langText">English</span>
+    </button>
+</div>
+
+<div class="container">
+    
+    <div class="header-info">
+        <div class="ar-content">
+            <h1>الأوراق القانونية</h1>
+            <p>آخر تحديث: 23 ديسمبر 2025</p>
+        </div>
+        <div class="en-content">
+            <h1>Legal Documents</h1>
+            <p>Last Updated: December 23, 2025</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="ar-content"><i class="fas fa-user-shield"></i> سياسة الخصوصية</h2>
+        <h2 class="en-content"><i class="fas fa-user-shield"></i> Privacy Policy</h2>
+        
+        <ul class="ar-content">
+            <li><strong>جمع البيانات:</strong> نقوم بتخزين معرفات المستخدمين والسيرفرات فقط لتشغيل الأوامر.</li>
+            <li><strong>الرسائل:</strong> لا نقوم بتخزين أو أرشفة أي محتوى نصي لرسائلك.</li>
+            <li><strong>مشاركة البيانات:</strong> لا يتم بيع أو مشاركة البيانات مع أي جهات خارجية.</li>
+        </ul>
+
+        <ul class="en-content">
+            <li><strong>Data Collection:</strong> We only store User and Guild IDs to ensure bot functionality.</li>
+            <li><strong>Messages:</strong> We do not log, store, or archive your text message content.</li>
+            <li><strong>Data Sharing:</strong> No data is sold or shared with any third-party entities.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2 class="ar-content"><i class="fas fa-file-contract"></i> شروط الخدمة</h2>
+        <h2 class="en-content"><i class="fas fa-file-contract"></i> Terms of Service</h2>
+
+        <ul class="ar-content">
+            <li><strong>الالتزام:</strong> يجب الالتزام بقوانين Discord الرسمية عند استخدام البوت.</li>
+            <li><strong>المسؤولية:</strong> المطور غير مسؤول عن سوء استخدام الأوامر الإدارية.</li>
+            <li><strong>الحظر:</strong> سيتم حظر أي سيرفر يستخدم البوت في التخريب أو "السبام".</li>
+        </ul>
+
+        <ul class="en-content">
+            <li><strong>Compliance:</strong> Usage must comply with Discord's official Terms of Service.</li>
+            <li><strong>Responsibility:</strong> Developers are not liable for misuse of admin commands.</li>
+            <li><strong>Bans:</strong> Malicious use (spam/raiding) will result in a permanent ban.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2 class="ar-content"><i class="fas fa-external-link-alt"></i> روابط هامة</h2>
+        <h2 class="en-content"><i class="fas fa-external-link-alt"></i> Quick Links</h2>
+        
+        <div class="action-buttons">
+            <a href="https://discord.com/oauth2/authorize?client_id=1423325443393589290&permissions=8&integration_type=0&scope=bot" class="btn btn-invite" target="_blank">
+                <span class="ar-content">إضافة البوت</span>
+                <span class="en-content">Add to Discord</span>
+            </a>
+            <a href="https://discord.gg/YOUR_INVITE_CODE" class="btn btn-support" target="_blank">
+                <span class="ar-content">سيرفر الدعم</span>
+                <span class="en-content">Support Server</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <span class="ar-content">© 2025 فريق Arab BOT — جميع الحقوق محفوظة</span>
+    <span class="en-content">© 2025 Arab BOT Team — All Rights Reserved</span>
+</footer>
+
+<script>
+    function toggleLanguage() {
+        const html = document.getElementById('mainHtml');
+        const langText = document.getElementById('langText');
+        
+        if (html.getAttribute('lang') === 'ar') {
+            html.setAttribute('lang', 'en');
+            html.setAttribute('dir', 'ltr');
+            langText.innerText = 'العربية';
+        } else {
+            html.setAttribute('lang', 'ar');
+            html.setAttribute('dir', 'rtl');
+            langText.innerText = 'English';
+        }
+    }
+
+    // تعيين العربية كافتراضية عند أول تحميل
+    window.onload = () => {
+        const html = document.getElementById('mainHtml');
+        html.setAttribute('lang', 'ar');
+        html.setAttribute('dir', 'rtl');
+    };
+</script>
+
+</body>
+</html>
